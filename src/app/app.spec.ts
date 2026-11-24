@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { provideRouter } from '@angular/router'; // <-- Adicione este import
+import { provideRouter } from '@angular/router';
 import { App } from './app';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
-      providers: [provideRouter([])] // <-- Adicione esta linha aqui
+      providers: [provideRouter([])]
     }).compileComponents();
   });
 
@@ -20,6 +20,7 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('agenda-unijorge');
+    // Alterado para conferir o texto real exibido no h1:
+    expect(compiled.querySelector('h1')?.textContent).toContain('Conectando');
   });
 });
